@@ -2,16 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
-import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import './index.scss'
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </ThemeProvider>,
   document.getElementById('root')
 )

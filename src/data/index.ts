@@ -1,6 +1,6 @@
 import Papa from 'papaparse'
 
-export const data = Papa.parse(
+export default Papa.parse(
   `batting_score,wickets,runs_conceded,catches,stumps,opposition,ground,date,match_result,result_margin,toss,batting_innings
 0,-,-,0,0,v Pakistan,Gujranwala,18 Dec 1989,lost,7 runs,won,2nd
 0,-,-,0,0,v New Zealand,Dunedin,1 Mar 1990,lost,108 runs,won,2nd
@@ -467,4 +467,4 @@ TDNB,-,-,1,0,v Australia,Centurion,28 Sep 2009,n/r,-,lost,2nd
 52,0,12,0,0,v Pakistan,Dhaka,18 Mar 2012,won,6 wickets,lost,2nd
 `,
   { header: true }
-)
+).data
