@@ -21,14 +21,14 @@ A website with statistics on Sachin Tendulkar with an attempt to prove him as G.
 
 - You need Node & Yarn to run this application. Download them here - [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com).
 
-- Now clone the repo and move to the repo folder using the following commands:
+- Run the following commands:
 
   ```bash
   git clone https://github.com/shadxx7/sactenx.git
   cd sactenx
   ```
 
-* Now Run the following commands:
+- Now to install dependencies and start the web app, run the following commands:
 
   ```bash
   yarn
@@ -39,7 +39,7 @@ A website with statistics on Sachin Tendulkar with an attempt to prove him as G.
 
 ## For Production
 
-Follow all the steps in development and once you have finalised your changes, run the following the repo's directory:
+Follow all the steps in development and once you have finalized your changes, run the following inside the directory:
 
 ```bash
 yarn build

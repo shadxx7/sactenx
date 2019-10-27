@@ -5,7 +5,7 @@ const Finale: React.FC = () => {
   return (
     <div id="finale">
       <h2>Finale</h2>
-      <Box width="70vw">
+      <Box width="70vw" mx="auto">
         <Text textAlign="justify">
           From all the stats above, we can understand that Sachin Tendulkar is a
           very consistent player which we understand from his moving average as

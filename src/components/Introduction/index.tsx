@@ -5,7 +5,13 @@ import './style.scss'
 
 const Introduction: React.FC = () => {
   return (
-    <div className="introduction-wrapper" id="introduction">
+    <Flex
+      flexDirection="column"
+      justifyContent="center"
+      mx="auto"
+      className="introduction-wrapper"
+      id="introduction"
+    >
       <h3 style={{ marginTop: -15 }}>Sachin Ramesh Tendulkar</h3>
       <Image
         src={SachinPhoto}
@@ -76,7 +82,7 @@ const Introduction: React.FC = () => {
           </ul>
         </Box>
       </Flex>
-    </div>
+    </Flex>
   )
 }
 

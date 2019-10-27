@@ -6,7 +6,14 @@ import {
   runsAverageBreakdown,
   totalWicketsBreakdown,
 } from '../../statistics'
-import { Tooltip, Area, AreaChart, Bar, BarChart } from 'recharts'
+import {
+  Tooltip,
+  Area,
+  AreaChart,
+  Bar,
+  BarChart,
+  ResponsiveContainer,
+} from 'recharts'
 import Block from '../UI/Block'
 
 const scoreData = battingScore()
@@ -18,19 +25,21 @@ const Stats: React.FC = () => {
   return (
     <div id="stats">
       <h2>Stats</h2>
-      <Flex>
+      <Flex justifyContent="center">
         <Block>
-          <AreaChart data={averageData} width={520} height={200}>
-            <defs>
-              <linearGradient id="colorAvg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#3b00ff" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <Tooltip />
-            <Area dataKey="average" fill="url(#colorAvg)" />
-          </AreaChart>
-          <Text my={4} fontSize={18}>
+          <ResponsiveContainer width={500} height="70%">
+            <AreaChart data={averageData}>
+              <defs>
+                <linearGradient id="colorAvg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#3b00ff" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+              <Tooltip />
+              <Area dataKey="average" fill="url(#colorAvg)" />
+            </AreaChart>
+          </ResponsiveContainer>
+          <Text my={2} fontSize={18}>
             The above graph is the moving batting average of Sachin (from the
             beginning of his career to the end). It is extremely consistent and
             slowly increasing.
@@ -52,7 +61,7 @@ const Stats: React.FC = () => {
         </Block>
       </Flex>
       <br />
-      <Flex>
+      <Flex justifyContent="center">
         <Block>
           <Text mt={2} fontSize={32}>
             <b>Total Wickets Taken -</b>
@@ -68,10 +77,12 @@ const Stats: React.FC = () => {
           </Text>
         </Block>
         <Block>
-          <BarChart data={scoreData} width={520} height={250}>
-            <Tooltip />
-            <Bar dataKey="score" fill="#ff006e" />
-          </BarChart>
+          <ResponsiveContainer width={500} height="70%">
+            <BarChart data={scoreData} width={520} height={250}>
+              <Tooltip />
+              <Bar dataKey="score" fill="#ff006e" />
+            </BarChart>
+          </ResponsiveContainer>
           <Text my={4} fontSize={18}>
             Time series of runs scored by Sachin. Highest Runs: 200
           </Text>

@@ -10,6 +10,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
+  ResponsiveContainer,
 } from 'recharts'
 import { countryWiseRuns } from '../../statistics'
 import Block from '../UI/Block'
@@ -30,19 +31,24 @@ const MoreStats = () => {
       </Text>
       <br />
       <Flex justifyContent="center">
-        <Block style={{ width: '45vw', height: '62vh' }}>
-          <ComposedChart
-            layout="vertical"
-            width={700}
-            height={450}
-            data={data}
-            style={{ fontSize: 14, fontWeight: 'bold' }}
-          >
-            <XAxis type="number" hide />
-            <YAxis dataKey="name" type="category" axisLine={false} width={80} />
-            <Tooltip />
-            <Bar dataKey="score" label barSize={20} fill="#ff9000" />
-          </ComposedChart>
+        <Block width={750} height={500}>
+          <ResponsiveContainer width={700} height="90%">
+            <ComposedChart
+              layout="vertical"
+              data={data}
+              style={{ fontSize: 14, fontWeight: 'bold' }}
+            >
+              <XAxis type="number" hide />
+              <YAxis
+                dataKey="name"
+                type="category"
+                axisLine={false}
+                width={80}
+              />
+              <Tooltip />
+              <Bar dataKey="score" label barSize={20} fill="#ff9000" />
+            </ComposedChart>
+          </ResponsiveContainer>
           <Text fontSize={18} my={2}>
             Runs against each country Sachin has played against
           </Text>
@@ -50,23 +56,23 @@ const MoreStats = () => {
       </Flex>
       <br />
       <Flex justifyContent="center">
-        <Block style={{ width: '45vw', height: '62vh' }}>
-          <RadarChart
-            outerRadius={200}
-            width={700}
-            height={450}
-            data={data}
-            style={{ fontSize: 14, fontWeight: 'bold' }}
-          >
-            <PolarGrid />
-            <PolarAngleAxis dataKey="name" />
-            <Radar
-              dataKey="average"
-              stroke="#8884d8"
-              fill="#8884d8"
-              fillOpacity={0.6}
-            />
-          </RadarChart>
+        <Block width={750} height={500}>
+          <ResponsiveContainer width={700} height="90%">
+            <RadarChart
+              outerRadius={200}
+              data={data}
+              style={{ fontSize: 14, fontWeight: 'bold' }}
+            >
+              <PolarGrid />
+              <PolarAngleAxis dataKey="name" />
+              <Radar
+                dataKey="average"
+                stroke="#8884d8"
+                fill="#8884d8"
+                fillOpacity={0.6}
+              />
+            </RadarChart>
+          </ResponsiveContainer>
           <Text fontSize={18} my={2}>
             Average against each country with over 10 matches
           </Text>

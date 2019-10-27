@@ -5,7 +5,7 @@ import './style.scss'
 const Nav: React.FC = () => {
   return (
     <nav className="nav">
-      <Flex px={2} color="#282c34" bg="white" alignItems="center">
+      <Flex px={2} color="#282c34" bg="white" justifyContent="center">
         <Link px={4} sx={{ fontSize: 25 }} variant="nav" href="#introduction">
           Introduction
         </Link>
