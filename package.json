@@ -1,7 +1,12 @@
 {
   "name": "sactenx",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "author": {
+    "email": "mohamedshadab78@gmail.com",
+    "name": "Mohamed Shadab",
+    "url": "https://statebait.github.io/"
+  },
   "dependencies": {
     "@rebass/preset": "^4.0.5",
     "emotion-theming": "^10.0.19",
