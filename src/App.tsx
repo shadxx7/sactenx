@@ -5,12 +5,13 @@ import Introduction from './components/Introduction'
 import Stats from './components/Stats'
 import MoreStats from './components/MoreStats'
 import Finale from './components/Finale'
+import 'react-responsive-modal/styles.css'
 import './App.scss'
 
 const App: React.FC<any> = () => {
   const [open, setOpen] = useState(false)
   function closeOpeniningModal() {
-    return setOpen(s => !s)
+    return setOpen((s) => !s)
   }
 
   useEffect(() => {
