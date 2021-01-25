@@ -9,7 +9,7 @@ export const battingScore = () => {
     opposition: string
   }
   let result: Array<resultObj> = []
-  rawData.forEach(item => {
+  rawData.forEach((item: any) => {
     let opposition = item.opposition
     if (opposition !== null && opposition !== undefined) {
       opposition = opposition.substring(2)
@@ -90,7 +90,7 @@ export const runsAverageBreakdown = () => {
 export const wicketsTaken = () => {
   const data = rawData
   let result: Array<{ wickets: number; matchResult: string }> = []
-  data.forEach(item => {
+  data.forEach((item: any) => {
     if (item.wickets !== '-')
       result.push({
         wickets: Number(item.wickets),
@@ -105,7 +105,7 @@ export const totalWicketsBreakdown = () => {
   let totalWin = 0,
     totalLost = 0,
     totalDraw = 0
-  data.forEach(item => {
+  data.forEach((item) => {
     if (item.matchResult === 'won') totalWin += item.wickets
     else if (item.matchResult === 'lost') totalLost += item.wickets
     else if (item.matchResult === 'n/r') totalDraw += item.wickets
@@ -116,12 +116,12 @@ export const totalWicketsBreakdown = () => {
 export const countryWiseRuns = () => {
   let data = battingScore()
   let countries: Array<any> = []
-  data.forEach(item => {
+  data.forEach((item) => {
     const temp = item.opposition
     if (!_.includes(countries, temp)) countries.push(temp)
   })
-  countries = countries.map(item => ({ name: item, score: 0, matches: 0 }))
-  data.forEach(item => {
+  countries = countries.map((item) => ({ name: item, score: 0, matches: 0 }))
+  data.forEach((item) => {
     countries.forEach((country: any) => {
       if (country.name === item.opposition) {
         country.score += item.score
@@ -129,7 +129,7 @@ export const countryWiseRuns = () => {
       }
     })
   })
-  countries = countries.map(item => ({
+  countries = countries.map((item) => ({
     ...item,
     average: item.score / item.matches,
   }))
