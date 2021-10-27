@@ -3,8 +3,6 @@
 > This project was built for a task in an interview process at [Atlan](https://atlan.com/).
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Live at - https://sactenx.netlify.com
-
 A website with statistics on Sachin Tendulkar with an attempt to prove him as G.O.A.T.
 
 \*\* This website in not responsive and only works on larger screens (13-inch laptops and larger).
